@@ -1,37 +1,11 @@
-const $templateLi = document.getElementById('templateLi');
-const $listaUl = document.getElementById('listaUl');
-const fragment = document.createDocumentFragment();
-const $btnButtons = document.querySelectorAll('.card button');
-
-const carritoObjeto = {};
-
-const agregarAlcarrito = (e)=>{
-    const producto = {
-        titulo: e.target.dataset.fruta,
-        id: e.target.dataset.fruta,
-        cantidad: 1,
+const validarBoletos = number => {
+    const numBoletos = [321,222,333,182];
+    const boletosValidos = numBoletos.find(num => num === number);
+    boletosValidos ?  alert(`El numero de boleto: ${number}. Es correcto`) 
+    : alert(`El numero de boleto: ${number}. Es incorrecto`); 
     };
-    if(carritoObjeto.hasOwnProperty(producto.titulo)){
-        producto.cantidad = carritoObjeto[producto.titulo].cantidad + 1;
-    };  
-    carritoObjeto[producto.titulo] = producto;
-    
-    pushCarrito();
-};
 
-const pushCarrito = ()=>{
+const numIngresado = parseInt(prompt("Ingrese su numero de boleto 😎"));
 
-    $listaUl.textContent = "";
-
-    Object.values(carritoObjeto).forEach(item=>{
-        const cloneTemplate =  $templateLi.content.firstElementChild.cloneNode(true);
-        cloneTemplate.querySelector('.frutaSpan').textContent = item.titulo; //TODO:item igual a las propiedades del objeto
-        cloneTemplate.querySelector('.badge').textContent = item.cantidad; 
-        fragment.appendChild(cloneTemplate);
-    })
-    $listaUl.appendChild(fragment);
-};
-
-$btnButtons.forEach(btn=>{btn.addEventListener('click', agregarAlcarrito)});
-
+validarBoletos(numIngresado);
 

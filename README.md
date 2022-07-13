@@ -12,4 +12,4 @@ Si puedes mejorar el código, Bienvenido! al array-01
         <span class="badge bg-primary rounded-pill">12</span>
       </li>
     </template>
-```
+```s
