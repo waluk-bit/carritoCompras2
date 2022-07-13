@@ -1,7 +1,7 @@
 # Ejemplo carrito de compras con objeto y template
 
 ## Todo con fines educativos
-Si puedes mejorar el código, Bienvenido!
+Si puedes mejorar el código, Bienvenido! al array-01
 
 ## template
 ```html
